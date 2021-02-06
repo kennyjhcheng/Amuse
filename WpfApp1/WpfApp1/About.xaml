@@ -1,0 +1,62 @@
+﻿<Window x:Class="WpfApp1.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="About"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.TintColor="#CCFFFFFF"
+        fw:AcrylicWindow.AcrylicWindowStyle="Normal"
+        fw:AcrylicWindow.TintOpacity="0.9"
+        Height="744"
+        Width="899.42">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+            HorizontalAlignment="Center"
+                   FontSize="24"
+                   Grid.Row="1"
+          
+            Text="About Amuse"/>
+        <TextBlock Grid.Row="2"
+                   HorizontalAlignment="Center"
+                   FontSize="24">
+            Designed and developed by ASk studio,
+            <LineBreak />
+            Amuse is a desktop app to add laughs to
+            <LineBreak />
+            remote work
+            <LineBreak />
+        </TextBlock>
+        <TextBlock Grid.Row="3"
+                   HorizontalAlignment="Center"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                  >
+            
+            Currently available for Windows 7,8,10.
+        </TextBlock>
+        <TextBlock Grid.Row="4"
+                   HorizontalAlignment="Center"
+                   FontSize="15"
+                   VerticalAlignment="Top"
+                 >
+            ASK studio came together in December 2020 when Ash,
+           
+              <LineBreak />
+             Simi, and Kenny met each other at nwPlus HackCamp.
+              <LineBreak />
+            
+        </TextBlock>
+    </Grid>
+</Window>

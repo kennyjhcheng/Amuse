@@ -1,0 +1,253 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        WindowStyle="None"
+        mc:Ignorable="d"
+        Title="Amuse"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Height="744"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.TintColor="#CCFFFFFF"
+        
+        fw:AcrylicWindow.AcrylicWindowStyle="None"
+        fw:AcrylicWindow.TintOpacity="0.9"
+        Width="900">
+
+    <Window.Resources>
+        <Style x:Key="MyButton"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Margin"
+                    Value="10 10 10 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="0"
+                                BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Foreground"
+                                        Value="#2d9cdb" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+        <Style x:Key="MySelectionButton"
+               TargetType="Button">
+            <Setter Property="Background"
+                    Value="#b6d9f1" />
+            <Setter Property="Template">
+
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border  Name="border"
+                                 Background="{TemplateBinding Background}"
+                                 BorderThickness="3">
+
+
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="#662d9cdb" />
+
+
+
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MySaveButton"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Margin"
+                    Value="10 10 10 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border Name="border"
+                                BorderThickness="0"
+                                BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Opacity"
+                                        Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.ContextMenu>
+        <ContextMenu Opacity="0.5">
+            <MenuItem Header="1" />
+            <MenuItem Header="2" />
+            <MenuItem Header="3" />
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Border Padding="0">
+        <Grid ShowGridLines="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.45*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition x:Name="RowAuto"
+                               Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid ShowGridLines="False"
+                  Background="#99FFFFFF"
+                  MouseDown="Grid_MouseDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+              
+
+                <Button Style="{StaticResource MyButton}"
+                        HorizontalAlignment="Right"
+                        Grid.Column="6"
+                        Grid.Row="0"
+                        xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+                        Padding="10"
+                        Click="CrossButton_Click"
+                        BorderBrush="Transparent">
+                    <mi:MaterialIcon Icon="ic_close"
+                                     Height="36"
+                                     Width="45" />
+                </Button>
+
+                <Button Style="{StaticResource MyButton}"
+                        HorizontalAlignment="Left"
+                        Grid.Column="0"
+                        xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+                        Padding="10"
+                        Click="OpenSettingButton_Click"
+                        BorderBrush="Transparent">
+                  
+                    <mi:MaterialIcon Icon="ic_settings"
+                                     Height="36"
+                                     Width="45" />
+                </Button>
+            </Grid>
+
+            <Label Content="Set up Amuse"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="24" />
+            <Label Content="I want to recieve"
+                   Grid.Row="2"
+                   FontSize="45"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="4"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top">
+                <Button Margin="0 0 5 0"
+                        BorderBrush="#8bc1ec"
+                        BorderThickness="3"
+                        Height="50"
+                        Width="91"
+                        FontSize="21"
+                        Style="{StaticResource MySelectionButton}"
+                        Click="JokeButtonClick">
+                    Jokes
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+                                    Value="8" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button FontSize="21"
+                        Padding="15 0 15 0"
+                        Margin="5 0 0 0"
+                        BorderBrush="#8bc1ec"
+                        BorderThickness="3"
+                        Width="227"
+                        Style="{StaticResource MySelectionButton}"
+                        Click="PicsButtonClicked">Cute animal pictures
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+                                    Value="8" />
+
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal"
+                        Grid.Row="6">
+                <Button Style="{StaticResource MySaveButton}"
+                        FontSize="21"
+                        Foreground="White"
+                        Background="#0099CC"
+                        Height="55"
+                        Width="107"
+                        Click="SaveInitialPreference">
+
+                    Save
+                </Button>
+            </StackPanel>
+
+       
+        </Grid>
+
+    </Border>
+</Window>

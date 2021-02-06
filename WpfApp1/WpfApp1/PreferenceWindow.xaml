@@ -1,0 +1,426 @@
+﻿<Window x:Class="WpfApp1.PreferenceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Preference"
+        Loaded="Window_Loaded"
+        Height="679"
+       
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.TintColor="#CCFFFFFF"
+        fw:AcrylicWindow.AcrylicWindowStyle="Normal"
+        fw:AcrylicWindow.TintOpacity="0.9"
+        Closed="PreferenceWindow_Closed"
+        Width="526">
+    <Window.Resources>
+        <Style x:Key="MyButton"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="Background"
+                    Value="Gray" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Margin"
+                    Value="10 10 10 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="0"
+                                BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Opacity" 
+                                        Value="0.7"
+                                        />
+                                <!--<Setter Property="Foreground"
+                                        Value="#2d9cdb" />-->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+        <Style x:Key="SaveButton"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="Background"
+                    Value="#0099CC" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Margin"
+                    Value="10 10 10 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="0"
+                                BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Opacity"
+                                        Value="0.7" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border Margin="40 10 40 10">
+
+
+        <Grid>
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1"
+                       Text="Notify"
+                       FontSize="26"
+                       VerticalAlignment="Bottom" />
+            <ComboBox Grid.Row="2"
+                      x:Name="Notify"
+                      Background="White"
+                      Foreground="Black"
+                      FontSize="20"
+                      BorderBrush="Black"
+                      SelectedIndex="0"
+                      SelectedValuePath="Content"
+                      Height="40">
+                <ComboBoxItem> Once a day</ComboBoxItem>
+                <ComboBoxItem> 2-3 Times a day</ComboBoxItem>
+                <ComboBoxItem> 3-4 Times a day</ComboBoxItem>
+                <ComboBoxItem> 5 Times a day</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Grid.Row="4"
+                       Text="From"
+                       FontSize="26"
+                       VerticalAlignment="Bottom" />
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ComboBox Grid.Row="5"
+                          SelectedIndex="0"
+                          BorderBrush="Black"
+                          SelectedValuePath="Content"
+                          Grid.Column="0"
+                          Background="White"
+                          Foreground="Black"
+                          Name="FromHour"
+                          FontSize="20"
+                          Height="40">
+                    <ComboBoxItem> 1</ComboBoxItem>
+                    <ComboBoxItem> 2</ComboBoxItem>
+                    <ComboBoxItem> 3</ComboBoxItem>
+                    <ComboBoxItem> 4</ComboBoxItem>
+                    <ComboBoxItem> 5</ComboBoxItem>
+                    <ComboBoxItem> 6</ComboBoxItem>
+                    <ComboBoxItem> 7</ComboBoxItem>
+                    <ComboBoxItem> 8</ComboBoxItem>
+                    <ComboBoxItem> 9</ComboBoxItem>
+                    <ComboBoxItem> 10</ComboBoxItem>
+                    <ComboBoxItem> 11</ComboBoxItem>
+                    <ComboBoxItem> 12</ComboBoxItem>
+                </ComboBox>
+                <ComboBox Grid.Row="5"
+                          Grid.Column="1"
+                          SelectedIndex="0"
+                          BorderBrush="Black"
+                          Name="FromMin"
+                          Background="White"
+                          Foreground="Black"
+                          FontSize="20"
+                          SelectedValuePath="Content"
+                          Height="40">
+                    <ComboBoxItem> 0</ComboBoxItem>
+                    <ComboBoxItem> 1</ComboBoxItem>
+                    <ComboBoxItem> 2</ComboBoxItem>
+                    <ComboBoxItem> 3</ComboBoxItem>
+                    <ComboBoxItem> 4</ComboBoxItem>
+                    <ComboBoxItem> 5</ComboBoxItem>
+                    <ComboBoxItem> 6</ComboBoxItem>
+                    <ComboBoxItem> 7</ComboBoxItem>
+                    <ComboBoxItem> 8</ComboBoxItem>
+                    <ComboBoxItem> 9</ComboBoxItem>
+                    <ComboBoxItem> 10</ComboBoxItem>
+                    <ComboBoxItem> 11</ComboBoxItem>
+                    <ComboBoxItem> 12</ComboBoxItem>
+                    <ComboBoxItem> 13</ComboBoxItem>
+                    <ComboBoxItem> 14</ComboBoxItem>
+                    <ComboBoxItem> 15</ComboBoxItem>
+                    <ComboBoxItem> 16</ComboBoxItem>
+                    <ComboBoxItem> 17</ComboBoxItem>
+                    <ComboBoxItem> 18</ComboBoxItem>
+                    <ComboBoxItem> 19</ComboBoxItem>
+                    <ComboBoxItem> 20</ComboBoxItem>
+                    <ComboBoxItem> 21</ComboBoxItem>
+                    <ComboBoxItem> 22</ComboBoxItem>
+                    <ComboBoxItem> 23</ComboBoxItem>
+                    <ComboBoxItem> 24</ComboBoxItem>
+                    <ComboBoxItem> 25</ComboBoxItem>
+                    <ComboBoxItem> 26</ComboBoxItem>
+                    <ComboBoxItem> 27</ComboBoxItem>
+                    <ComboBoxItem> 28</ComboBoxItem>
+                    <ComboBoxItem> 29</ComboBoxItem>
+                    <ComboBoxItem> 30</ComboBoxItem>
+                    <ComboBoxItem> 31</ComboBoxItem>
+                    <ComboBoxItem> 32</ComboBoxItem>
+                    <ComboBoxItem> 33</ComboBoxItem>
+                    <ComboBoxItem> 34</ComboBoxItem>
+                    <ComboBoxItem> 35</ComboBoxItem>
+                    <ComboBoxItem> 36</ComboBoxItem>
+                    <ComboBoxItem> 37</ComboBoxItem>
+                    <ComboBoxItem> 38</ComboBoxItem>
+                    <ComboBoxItem> 39</ComboBoxItem>
+                    <ComboBoxItem> 40</ComboBoxItem>
+                    <ComboBoxItem> 41</ComboBoxItem>
+                    <ComboBoxItem> 42</ComboBoxItem>
+                    <ComboBoxItem> 43</ComboBoxItem>
+                    <ComboBoxItem> 44</ComboBoxItem>
+                    <ComboBoxItem> 45</ComboBoxItem>
+                    <ComboBoxItem> 46</ComboBoxItem>
+                    <ComboBoxItem> 47</ComboBoxItem>
+                    <ComboBoxItem> 48</ComboBoxItem>
+                    <ComboBoxItem> 49</ComboBoxItem>
+                    <ComboBoxItem> 50</ComboBoxItem>
+                    <ComboBoxItem> 51</ComboBoxItem>
+                    <ComboBoxItem> 52</ComboBoxItem>
+                    <ComboBoxItem> 53</ComboBoxItem>
+                    <ComboBoxItem> 54</ComboBoxItem>
+                    <ComboBoxItem> 55</ComboBoxItem>
+                    <ComboBoxItem> 56</ComboBoxItem>
+                    <ComboBoxItem> 57</ComboBoxItem>
+                    <ComboBoxItem> 58</ComboBoxItem>
+                    <ComboBoxItem> 59</ComboBoxItem>
+                    <ComboBoxItem> 60</ComboBoxItem>
+                </ComboBox>
+                <ComboBox Grid.Row="5"
+                          SelectedIndex="0"
+                          Name="FromAMPM"
+                          BorderBrush="Black"
+                          SelectedValuePath="Content"
+                          Grid.Column="2"
+                          Background="White"
+                          Foreground="Black"
+                          FontSize="20"
+                          Height="40">
+                    <ComboBoxItem>AM</ComboBoxItem>
+                    <ComboBoxItem>PM</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+
+            <TextBlock Grid.Row="6"
+                       Text="To"
+                       FontSize="26"
+                       VerticalAlignment="Bottom" />
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ComboBox Grid.Row="5"
+                          SelectedValuePath="Content"
+                          Name="ToHour"
+                          SelectedIndex="0"
+                          BorderBrush="Black"
+                          Grid.Column="0"
+                          Background="White"
+                          Foreground="Black"
+                          FontSize="20"
+                          Height="40">
+                    <ComboBoxItem> 1</ComboBoxItem>
+                    <ComboBoxItem> 2</ComboBoxItem>
+                    <ComboBoxItem> 3</ComboBoxItem>
+                    <ComboBoxItem> 4</ComboBoxItem>
+                    <ComboBoxItem> 5</ComboBoxItem>
+                    <ComboBoxItem> 6</ComboBoxItem>
+                    <ComboBoxItem> 7</ComboBoxItem>
+                    <ComboBoxItem> 8</ComboBoxItem>
+                    <ComboBoxItem> 9</ComboBoxItem>
+                    <ComboBoxItem> 10</ComboBoxItem>
+                    <ComboBoxItem> 11</ComboBoxItem>
+                    <ComboBoxItem> 12</ComboBoxItem>
+                </ComboBox>
+                <ComboBox Grid.Row="5"
+                          Grid.Column="1"
+                          SelectedValuePath="Content"
+                          Background="White"
+                          SelectedIndex="0"
+                          Foreground="Black"
+                          FontSize="20"
+                          BorderBrush="Black"
+                          Name="ToMin"
+                          Height="40">
+                    <ComboBoxItem> 0</ComboBoxItem>
+                    <ComboBoxItem> 1</ComboBoxItem>
+                    <ComboBoxItem> 2</ComboBoxItem>
+                    <ComboBoxItem> 3</ComboBoxItem>
+                    <ComboBoxItem> 4</ComboBoxItem>
+                    <ComboBoxItem> 5</ComboBoxItem>
+                    <ComboBoxItem> 6</ComboBoxItem>
+                    <ComboBoxItem> 7</ComboBoxItem>
+                    <ComboBoxItem> 8</ComboBoxItem>
+                    <ComboBoxItem> 9</ComboBoxItem>
+                    <ComboBoxItem> 10</ComboBoxItem>
+                    <ComboBoxItem> 11</ComboBoxItem>
+                    <ComboBoxItem> 12</ComboBoxItem>
+                    <ComboBoxItem> 13</ComboBoxItem>
+                    <ComboBoxItem> 14</ComboBoxItem>
+                    <ComboBoxItem> 15</ComboBoxItem>
+                    <ComboBoxItem> 16</ComboBoxItem>
+                    <ComboBoxItem> 17</ComboBoxItem>
+                    <ComboBoxItem> 18</ComboBoxItem>
+                    <ComboBoxItem> 19</ComboBoxItem>
+                    <ComboBoxItem> 20</ComboBoxItem>
+                    <ComboBoxItem> 21</ComboBoxItem>
+                    <ComboBoxItem> 22</ComboBoxItem>
+                    <ComboBoxItem> 23</ComboBoxItem>
+                    <ComboBoxItem> 24</ComboBoxItem>
+                    <ComboBoxItem> 25</ComboBoxItem>
+                    <ComboBoxItem> 26</ComboBoxItem>
+                    <ComboBoxItem> 27</ComboBoxItem>
+                    <ComboBoxItem> 28</ComboBoxItem>
+                    <ComboBoxItem> 29</ComboBoxItem>
+                    <ComboBoxItem> 30</ComboBoxItem>
+                    <ComboBoxItem> 31</ComboBoxItem>
+                    <ComboBoxItem> 32</ComboBoxItem>
+                    <ComboBoxItem> 33</ComboBoxItem>
+                    <ComboBoxItem> 34</ComboBoxItem>
+                    <ComboBoxItem> 35</ComboBoxItem>
+                    <ComboBoxItem> 36</ComboBoxItem>
+                    <ComboBoxItem> 37</ComboBoxItem>
+                    <ComboBoxItem> 38</ComboBoxItem>
+                    <ComboBoxItem> 39</ComboBoxItem>
+                    <ComboBoxItem> 40</ComboBoxItem>
+                    <ComboBoxItem> 41</ComboBoxItem>
+                    <ComboBoxItem> 42</ComboBoxItem>
+                    <ComboBoxItem> 43</ComboBoxItem>
+                    <ComboBoxItem> 44</ComboBoxItem>
+                    <ComboBoxItem> 45</ComboBoxItem>
+                    <ComboBoxItem> 46</ComboBoxItem>
+                    <ComboBoxItem> 47</ComboBoxItem>
+                    <ComboBoxItem> 48</ComboBoxItem>
+                    <ComboBoxItem> 49</ComboBoxItem>
+                    <ComboBoxItem> 50</ComboBoxItem>
+                    <ComboBoxItem> 51</ComboBoxItem>
+                    <ComboBoxItem> 52</ComboBoxItem>
+                    <ComboBoxItem> 53</ComboBoxItem>
+                    <ComboBoxItem> 54</ComboBoxItem>
+                    <ComboBoxItem> 55</ComboBoxItem>
+                    <ComboBoxItem> 56</ComboBoxItem>
+                    <ComboBoxItem> 57</ComboBoxItem>
+                    <ComboBoxItem> 58</ComboBoxItem>
+                    <ComboBoxItem> 59</ComboBoxItem>
+                    <ComboBoxItem> 60</ComboBoxItem>
+                </ComboBox>
+                <ComboBox Grid.Row="5"
+                          Grid.Column="2"
+                          Background="White"
+                          Foreground="Black"
+                          SelectedValuePath="Content"
+                          Name="ToAMPM"
+                          SelectedIndex="0"
+                          FontSize="20"
+                          BorderBrush="Black"
+                          Height="40">
+                    <ComboBoxItem> AM</ComboBoxItem>
+                    <ComboBoxItem> PM</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+            <Grid  Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button FontSize="21"
+                        Click="CancelButton_Click"
+                        Padding="15 0 15 0"
+                        Margin="5 0 0 0"
+                        BorderBrush="#8bc1ec"
+                        BorderThickness="3"
+                        Width="127"
+                        Content="Cancel"
+                        Grid.Column="1"
+                        Style="{StaticResource MyButton}">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+                                    Value="8" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button FontSize="21"
+                        Padding="15 0 15 0"
+                        Margin="5 0 0 0"
+                        BorderBrush="#8bc1ec"
+                        BorderThickness="3"
+                        Width="127"
+                        Content="Save"
+                        Grid.Column="2"
+                        Click="SaveButton_Click"
+                        Style="{StaticResource SaveButton}">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+                                    Value="8" />
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

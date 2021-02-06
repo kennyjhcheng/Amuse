@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "g+3ORCzp+j+C5HbJ4ZtCxSRxpgCjYRouT1HYo729RFOB7sAKPb/NXwPZtQTluiqGpqHSZ8oXNnfusxzLVhHYBg==",
+  "success": true,
+  "projectFilePath": "D:\\c#Projects\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aashi\\.nuget\\packages\\fluentwpf\\0.8.0\\fluentwpf.0.8.0.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\mahapps.metro.iconpacks\\4.8.0\\mahapps.metro.iconpacks.4.8.0.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\materialdesigncolors\\1.2.7\\materialdesigncolors.1.2.7.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\materialdesignthemes\\3.2.0\\materialdesignthemes.3.2.0.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\materialicons\\1.0.3\\materialicons.1.0.3.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\notifications.wpf\\0.1.1\\notifications.wpf.0.1.1.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\wpfnotification\\1.1.0\\wpfnotification.1.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,105 @@
+﻿<Window x:Class="WpfApp1.JokesWindow"
+       
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+       
+        WindowStyle="None"
+        mc:Ignorable="d"
+       Loaded="Window_Loaded"
+        Title="Amuse"
+        Height="744"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.TintColor="#CCFFFFFF"
+        fw:AcrylicWindow.AcrylicWindowStyle="None"
+        fw:AcrylicWindow.TintOpacity="0.9"
+        Width="900">
+    <Window.Resources>
+        <Style x:Key="MyButton"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Margin"
+                    Value="10 10 10 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="0"
+                                BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Foreground"
+                                        Value="#2d9cdb" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.08*"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid ShowGridLines="False"
+              Grid.Row="0"
+              Background="#99FFFFFF"
+              MouseDown="Grid_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource MyButton}"
+                    HorizontalAlignment="Right"
+                    Grid.Column="6"
+                    Grid.Row="0"
+                    xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+                    Padding="10"
+                    Click="CrossButton_Click"
+                    BorderBrush="Transparent">
+                <mi:MaterialIcon Icon="ic_close"
+                                 Height="36"
+                                 Width="45" />
+            </Button>
+
+            <Button Style="{StaticResource MyButton}"
+                    HorizontalAlignment="Left"
+                    Grid.Column="0"
+                    xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+                    Padding="10"
+                    Click="OpenSettingsButton_Click"
+                    BorderBrush="Transparent">
+                <mi:MaterialIcon Icon="ic_settings"
+                                 Height="36"
+                                 Width="45"
+                                />
+            </Button>
+        </Grid>
+        <Frame x:Name="Frame"
+               Grid.Row="1"
+               NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>

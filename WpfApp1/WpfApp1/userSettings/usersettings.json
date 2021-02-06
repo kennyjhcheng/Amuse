@@ -1,0 +1,33 @@
+{
+  "time": 3600000,
+  "jokeInterval": 1,
+  "jokeSelection": "select",
+  "jokeSelection1": "any",
+  "notifyJokes": false,
+  "notifyPics": false,
+  "pic": 30,
+  "dnd": [
+    {
+      "dndstart": 1,
+      "dndstop": 2
+    },
+    {
+      "dndstart": 5,
+      "dndstop": 6
+    }
+  ],
+  "name": null,
+  "jokeCategory": {
+    "programming": -2,
+    "miscellaneous": 2,
+    "dark": -2,
+    "pun": -1,
+    "spooky": -1,
+    "christmas": -1
+  },
+  "blacklist": [
+    "religious",
+    "political"
+  ],
+  "notifyjokes": true
+}
