@@ -20,7 +20,7 @@
 
 #### High level features
 - ✅ Ability to add a joke
-- [ ] Ability to comment on a joke which everyone can see.
+- [] Ability to comment on a joke which everyone can see.
 
 ## Running the project
 #### Prequisites 
