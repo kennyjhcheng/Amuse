@@ -39,7 +39,7 @@
 1. Download zip for this repo and unzip it or clone the project from github with your terminal/command line
 2. Open Visual Studio
 3. On the start window, select Open a project or solution.
-  * or go to File -> Open -> Project/Solution
+> or go to File -> Open -> Project/Solution
 4. Visual Studio opens an instance of File Explorer, where you can browse to the directory where you unzipped the project, open that directory
 5. In the directory, double click into 'WpfApp1' directory, then double click on 'WpfApp1.sln'
 6. Press on the green triangle start button in Visual Studio's tool bar to run the application
