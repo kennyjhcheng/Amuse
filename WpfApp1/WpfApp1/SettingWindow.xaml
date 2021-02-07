@@ -1,0 +1,156 @@
+﻿<Window x:Class="WpfApp1.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="SettingWindow"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.TintColor="#CCFFFFFF"
+        fw:AcrylicWindow.AcrylicWindowStyle="Normal"
+        fw:AcrylicWindow.TintOpacity="0.9"
+        Background="Transparent"
+        Loaded="SettingWindow_Loaded"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Height="341"
+        Width="396.51">
+    <Window.Resources>
+        <Style x:Key="MyButton"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Margin"
+                    Value="10 10 10 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="0"
+                                BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="#66007ACC" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Style="{StaticResource MyButton}"
+                Grid.Row="0"
+                xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+                Padding="10"
+                Click="OnPreferenceClick"
+                BorderBrush="Transparent">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center">
+                <mi:MaterialIcon Icon="ic_settings"
+                                 Height="36"
+                                 Width="45" />
+
+
+                <TextBlock FontSize="37"
+                           VerticalAlignment="Top"
+                           Text="Preference" />
+
+            </StackPanel>
+
+
+        </Button>
+        <Button Style="{StaticResource MyButton}"
+                Grid.Row="1"
+                xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+                Padding="10"
+                Name="MuteButton"
+                BorderBrush="Transparent">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center">
+                <!--<mi:MaterialIcon Icon="ic_notifications"
+                                 Height="36"
+                                 Width="45" />-->
+                <iconPacks:PackIconControl Kind="{x:Static iconPacks:PackIconBoxIconsKind.RegularBell}"
+                                           Height="36"
+                                           Width="45" />
+
+                <TextBlock FontSize="26"
+                           Name="MuteToggle"
+                           VerticalAlignment="Top"
+                           Text="Mute: Off" />
+
+            </StackPanel>
+
+
+        </Button>
+
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource MyButton}"
+                    Grid.Column="1"
+                    xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+                    Padding="10"
+                    Click="uninstall_Click"
+                    BorderBrush="Transparent">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+
+
+
+                    <TextBlock FontSize="24"
+                               VerticalAlignment="Top"
+                               Text="Uninstall" />
+
+                </StackPanel>
+
+
+            </Button>
+            <Button Style="{StaticResource MyButton}"
+                    Grid.Column="0"
+                    xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+                    Padding="10"
+                    BorderBrush="Transparent"
+                    Click="AboutButton_Click">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+
+
+
+                    <TextBlock FontSize="26"
+                               VerticalAlignment="Top"
+                               Text="About" />
+
+                </StackPanel>
+
+
+            </Button>
+        </Grid>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,222 @@
+﻿<Window x:Class="WpfApp1.Notification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
+        Loaded="Window_Loaded"
+        fw:AcrylicWindow.AcrylicWindowStyle="None"
+        fw:AcrylicWindow.TintColor="#CCFFFFFF"
+        Background="#CCFFFFFF"
+        Title="Notification"
+        Height="400"
+        Width="500">
+    <Window.Resources>
+        <Style x:Key="MyButton"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="Background"
+                    Value="#828282" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Margin"
+                    Value="10 10 10 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+                                BorderThickness="0"
+                                BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Foreground"
+                                        Value="#2d9cdb" />
+                                <Setter Property="Opacity"
+                                        Value="0.4" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+        <Style x:Key="MySelectionButton"
+               TargetType="Button">
+            <Setter Property="Background"
+                    Value="#2D9CDB" />
+
+            <Setter Property="Template">
+
+
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border  Name="border"
+                                 Background="{TemplateBinding Background}"
+                                 BorderThickness="3">
+
+
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="#662d9cdb" />
+                                <Setter Property="Opacity"
+                                        Value="0.8" />
+
+
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MySaveButton"
+               TargetType="Button">
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="Cursor"
+                    Value="Hand" />
+            <Setter Property="Margin"
+                    Value="10 10 10 10" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border Name="border"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Opacity"
+                                        Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <!--<Border
+            BorderThickness="1"
+            Background="Beige"
+            BorderBrush="Black"
+            CornerRadius="10">-->
+    <Grid ShowGridLines="False"
+          Background="#CCFFFFFF"
+          RenderTransformOrigin="0,1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+    
+
+        <Border Margin="70,40,70,0"
+                Grid.RowSpan="5">
+            <Image Grid.RowSpan="5"
+                   Grid.Row="0"
+                   Name="Image" />
+        </Border>
+        <Grid Grid.Row="5"
+              Margin="0,26,0,28"
+              Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource MySelectionButton}"
+                    Grid.Column="1"
+                    Name="View_More"
+                    Grid.ColumnSpan="3"
+                    Foreground="White"
+                    FontSize="23"
+                    Click="View_More_Click"
+                    Height="60"
+                    VerticalAlignment="Bottom"
+                    Margin="25,0,0,0"
+                    HorizontalAlignment="Left"
+                    Width="142">
+                View More
+            </Button>
+            <Button Style="{StaticResource MyButton}"
+                    Grid.Column="3"
+                    Name="Close_button"
+                    Foreground="White"
+                    Grid.ColumnSpan="3"
+                    FontSize="23"
+                    Margin="47,3,27,3"
+                    Click="Close_button_Click">
+                Close
+            </Button>
+        </Grid>
+
+
+        <!-- Animation -->
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard>
+                    <Storyboard Completed="Storyboard_Completed">
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                            <SplineDoubleKeyFrame KeyTime="0:0:0"
+                                                  Value="0" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:0.5"
+                                                  Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="0:0:8"
+                                                  Value="1" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:10"
+                                                  Value="0" />
+                        </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+
+        <Grid.RenderTransform>
+            <ScaleTransform ScaleY="1" />
+        </Grid.RenderTransform>
+
+    </Grid>
+    <!--</Border>-->
+</Window>
