@@ -15,6 +15,8 @@
       d:DesignWidth="800"
       Height="744"
       Width="900"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
       Background="Transparent"
       Loaded="PicsPage_Loaded"
       Title="PicsPage">
@@ -67,23 +69,29 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Image 
-                Source="{Binding LoadImage}"
-                x:Name="image"
-                Grid.Row="1"
-                Grid.RowSpan="6"
-                PreviewMouseDown="Image_PreviewMouseDown"
-                   Margin="100 10 100 10"               
-                />
-          
-            <fa:ImageAwesome Visibility="Hidden"
+            <Image Source="{Binding LoadImage}"
+                   x:Name="image"
+                   Grid.Row="1"
+                   Grid.RowSpan="6"
+                   PreviewMouseDown="Image_PreviewMouseDown"
+                   Margin="100 10 100 10" />
+            <!--<fa:ImageAwesome Visibility="Hidden"
                              x:Name="Spinner"
-                             Grid.Row="4"
-                             Icon="Refresh"
+                             Grid.Row="3"
+                             Icon="CircleOutlineNotch"
                              Spin="True"
                              Height="48"
-                             Width="48" />
-           
+                             Foreground="#007ACC"
+                             Width="48" />-->
+            <Image Visibility="Hidden"
+                   Height="400"
+                   Opacity="0.8"
+                   Width="400"
+                   Grid.Row="2"
+                   Grid.RowSpan="4"
+                   x:Name="Spinner"
+                   gif:ImageBehavior.AnimatedSource="pack://application:,,,/userSettings/amuseloading.gif" />
+
             <Grid Grid.Row="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -102,7 +110,23 @@
                         BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-                        <mi:MaterialIcon Icon="ic_thumb_down"
+                        <iconPacks:PackIconControl Kind="{x:Static iconPacks:PackIconBoxIconsKind.RegularDislike}"
+                                                   Name="DislikeIcon"
+                                                   Height="36"
+                                                   Width="45"
+                                                   RenderTransformOrigin="0.5,0.5">
+                            <iconPacks:PackIconControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="1"
+                                                ScaleX="-1" />
+                                <SkewTransform AngleY="0"
+                                               AngleX="0" />
+                                <RotateTransform Angle="0" />
+                                <TranslateTransform Y="3" />
+                            </TransformGroup>
+                        </iconPacks:PackIconControl.RenderTransform>
+                        </iconPacks:PackIconControl>
+                        <!--<mi:MaterialIcon Icon="ic_thumb_down"
                                          Height="36"
                                          Width="45"
                                          RenderTransformOrigin="0.5,0.5">
@@ -116,7 +140,7 @@
                                     <TranslateTransform Y="3" />
                                 </TransformGroup>
                             </mi:MaterialIcon.RenderTransform>
-                        </mi:MaterialIcon>
+                        </mi:MaterialIcon>-->
                         <TextBlock FontSize="24"
                                    VerticalAlignment="Top"
                                    Text="Dislike" />

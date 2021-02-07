@@ -40,6 +40,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>taskbar.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Data.Entity.Design.Extensibility, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.DesignTools.Extensibility, Version=16.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -184,7 +187,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="userSettings\usersettings.json" />
+    <None Include="userSettings\usersettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -214,9 +219,22 @@
     <PackageReference Include="Notifications.Wpf">
       <Version>0.1.1</Version>
     </PackageReference>
+    <PackageReference Include="WpfAnimatedGif">
+      <Version>2.0.0</Version>
+    </PackageReference>
     <PackageReference Include="WPFNotification">
       <Version>1.1.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="userSettings\amuse.gif" />
+    <Resource Include="amuseloading.gif" />
+    <Resource Include="userSettings\amuseloading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icon.ico" />
+    <Resource Include="taskbar.ico" />
+    <Content Include="userSettings\settings.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

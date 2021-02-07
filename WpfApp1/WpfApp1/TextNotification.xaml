@@ -82,8 +82,6 @@
                                         Value="#662d9cdb" />
                                 <Setter Property="Opacity"
                                         Value="0.8" />
-
-
                             </Trigger>
 
 
@@ -123,7 +121,6 @@
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
-
             </Setter>
         </Style>
     </Window.Resources>
@@ -144,9 +141,6 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
-
-
         <TextBlock Grid.RowSpan="3"
                    Grid.Row="2"
                    VerticalAlignment="Center"
@@ -158,9 +152,6 @@
                    Name="JokeText"
                    Width="360"
                    Height="172" />
-
-
-
         <Border Margin="70,40,70,0"
                 Grid.RowSpan="5">
             <Grid>
@@ -185,7 +176,6 @@
                            Foreground="Black"
                            Name="AText" />
             </Grid>
-
         </Border>
         <Grid Grid.Row="5"
               Margin="0,26,0,28"
@@ -224,17 +214,14 @@
                 Close
             </Button>
         </Grid>
-
-
-        <!-- Animation -->
         <Grid.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard>
                     <Storyboard Completed="Storyboard_Completed">
-                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
                             <SplineDoubleKeyFrame KeyTime="0:0:0"
                                                   Value="0" />
-                            <SplineDoubleKeyFrame KeyTime="0:0:0.5"
+                            <SplineDoubleKeyFrame KeyTime="0:0:1"
                                                   Value="1" />
                         </DoubleAnimationUsingKeyFrames>
                         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)">
@@ -247,10 +234,8 @@
                 </BeginStoryboard>
             </EventTrigger>
         </Grid.Triggers>
-
         <Grid.RenderTransform>
             <ScaleTransform ScaleY="1" />
         </Grid.RenderTransform>
-
     </Grid>
 </Window>

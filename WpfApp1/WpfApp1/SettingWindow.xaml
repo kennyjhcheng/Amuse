@@ -88,12 +88,12 @@
                 BorderBrush="Transparent">
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Center">
-                <!--<mi:MaterialIcon Icon="ic_notifications"
+                <mi:MaterialIcon Icon="ic_notifications"
                                  Height="36"
-                                 Width="45" />-->
-                <iconPacks:PackIconControl Kind="{x:Static iconPacks:PackIconBoxIconsKind.RegularBell}"
+                                 Width="45" />
+                <!--<iconPacks:PackIconControl Kind="{x:Static iconPacks:PackIconBoxIconsKind.Bell}"
                                            Height="36"
-                                           Width="45" />
+                                           Width="45" />-->
 
                 <TextBlock FontSize="26"
                            Name="MuteToggle"

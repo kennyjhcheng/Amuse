@@ -41,10 +41,7 @@ namespace WpfApp1
         }
 
         private async void DoneJoke_Click(object sender, RoutedEventArgs e)
-        {
-
-            
-          
+        {          
             spinner.Visibility = Visibility.Visible;
             string path = "https://jokesapi.gottacatchemall.repl.co/jokesadd"; 
             HttpClient client = new HttpClient();

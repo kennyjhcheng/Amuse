@@ -12,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -47,15 +48,21 @@ namespace WpfApp1
         private void GoToJoke(object sender, RoutedEventArgs e)
         {
            JokesWindow.ParentFrame.NavigationService.Navigate(new JokesPage());
-            
-          
         }
         public async Task LoadImage()
         {
-
+            
+            DoubleAnimation da = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = new Duration(TimeSpan.FromSeconds(2)),
+                AutoReverse = true
+            };
+            Spinner.BeginAnimation(OpacityProperty, da);
+           
             image.Visibility = Visibility.Hidden;
             Spinner.Visibility = Visibility.Visible;
-        
             path = "https://dog.ceo/api/breeds/image/random";
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(path);
