@@ -52,13 +52,13 @@ aashishvichare10@gmail.com
 
 ## Member list and Github repos
  ```
- - Ash :  https://github.com/AshCatchEmAll
+ Ash :  https://github.com/AshCatchEmAll
  ```
  ```
- - Kenny : https://github.com/kennyjhcheng
+ Kenny : https://github.com/kennyjhcheng
  ```
  ```
- - Simi : https://github.com/simidesigns
+ Simi : https://github.com/simidesigns
  ```
  
  ## Devpost
