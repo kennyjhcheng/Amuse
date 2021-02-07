@@ -6,7 +6,7 @@
 
 # Table of Content:
 - [Features to implement](#features-to-implement)
-- [Displai Shots](#display-shots)
+- [Display Shots](#display-shots)
 - [Running the project](#running-the-project)
 - [Contact info](#contact-info)
 - [Member List and github repo](#member-list-and-github-repos)
