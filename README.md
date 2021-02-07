@@ -2,7 +2,7 @@
 <div align="center"><img height="100" width="150" src="amuse.png"/></div>
 
 <div align="center"><h3> Want an excuse? Just use Amuse ! </h3></div>
-<pre><div align="center"><img style="margin-right: 5px;" src="https://img.shields.io/badge/Python-3-brightgreen"/> <img src="https://img.shields.io/badge/C%23-WPF-blue"/> <img src="https://img.shields.io/badge/%20%20Uptime-90%25-orange"/> <img src="https://img.shields.io/badge/%20%20build-passing-green"/> <img src="https://img.shields.io/badge/%20%20Uptime-90%25-orange"/> <img src="https://img.shields.io/badge/%20%20contributers-3-informational"/> <img src="https://img.shields.io/badge/.NET-4.7.2-important"/></div></pre>
+<pre><div align="center"><img style="margin-right: 5px;" src="https://img.shields.io/badge/Python-3-brightgreen"/> <img src="https://img.shields.io/badge/C%23-WPF-blue"/> <img src="https://img.shields.io/badge/%20%20Uptime-90%25-orange"/> <img src="https://img.shields.io/badge/%20%20build-passing-green"/> <img src="https://img.shields.io/badge/%20%20Uptime-90%25-orange"/> <img src="https://img.shields.io/badge/%20%20contributers-3-informational"/> <img src="https://img.shields.io/badge/.NET-4.7.2-important"/></div> <img src="https://img.shields.io/badge/maintainability-A-yellow"/></div></pre> 
 
 # Table of Content:
 - [Features to implement](#features-to-implement)
@@ -39,7 +39,7 @@
 1. Download zip for this repo and unzip it or clone the project from github with your terminal/command line
 2. Open Visual Studio
 3. On the start window, select Open a project or solution.
-> or go to File -> Open -> Project/Solution
+  * or go to File -> Open -> Project/Solution
 4. Visual Studio opens an instance of File Explorer, where you can browse to the directory where you unzipped the project, open that directory
 5. In the directory, double click into 'WpfApp1' directory, then double click on 'WpfApp1.sln'
 6. Press on the green triangle start button in Visual Studio's tool bar to run the application
