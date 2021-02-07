@@ -5,13 +5,13 @@
 <pre><div align="center"><img style="margin-right: 5px;" src="https://img.shields.io/badge/Python-3-brightgreen"/> <img src="https://img.shields.io/badge/C%23-WPF-blue"/> <img src="https://img.shields.io/badge/%20%20Uptime-98%25-orange"/> <img src="https://img.shields.io/badge/%20%20build-passing-green"/> <img src="https://img.shields.io/badge/%20%20contributers-3-informational"/> <img src="https://img.shields.io/badge/.NET-4.7.2-important"/> <img src="https://img.shields.io/badge/maintainability-A-yellow"/> <img src="https://img.shields.io/badge/build%20for-Windows-blue"/></div></pre> 
 
 # Table of Content:
-- [Features to implement](#features-to-implement)
+- [Features](#features)
 - [Display Shots](#display-shots)
 - [Running the project](#running-the-project)
 - [Contact info](#contact-info)
 - [Member List and github repo](#member-list-and-github-repos)
 - [Devpost](#devpost)
-## Features to implement
+## Features
 #### Core features 
 - ✅ Saving initial preferences
 - ✅ Jokes 
