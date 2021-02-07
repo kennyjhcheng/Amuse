@@ -2,13 +2,14 @@
 <div align="center"><img height="100" width="150" src="amuse.png"/></div>
 <div align="center"> 🚧 Under construction 🚧 </div>
 <div align="center"><h3> Want an excuse? Just use Amuse ! </h3></div>
+<pre><div align="center"><img style="margin-right: 5px;" src="https://img.shields.io/badge/Python-3-brightgreen"/> <img src="https://img.shields.io/badge/C%23-WPF-blue"/> <img src="https://img.shields.io/badge/%20%20Uptime-90%25-orange"/> <img src="https://img.shields.io/badge/%20%20build-passing-green"/> <img src="https://img.shields.io/badge/%20%20Uptime-90%25-orange"/> <img src="https://img.shields.io/badge/%20%20contributers-3-informational"/> <img src="https://img.shields.io/badge/.NET-4.7.2-important"/></div></pre>
 
 # Table of Content:
 - [Features to implement](#features-to-implement)
 - [Running the project](#running-the-project)
 - [Contact info](#contact-info)
 - [Member List and github repo](#member-list-and-github-repos)
-
+- [Devpost](#devpost)
 ## Features to implement
 #### Core features 
 - ✅ Saving initial preferences
@@ -20,7 +21,7 @@
 
 #### High level features
 - ✅ Ability to add a joke
-- [ ] Ability to comment on a joke which everyone can see.
+- 🚧 Ability to comment on a joke which everyone can see.
 
 ## Running the project
 #### Prequisites 
@@ -59,3 +60,6 @@ aashishvichare10@gmail.com
  ```
  - Simi : https://github.com/simidesigns
  ```
+ 
+ ## Devpost
+__https://devpost.com/software/amuse-k2s6r3?ref_content=my-projects-tab&ref_feature=my_projects__
