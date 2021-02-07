@@ -11,17 +11,17 @@
 
 ## Features to implement
 #### Core features 
-- [x] Saving initial preferences
-- [x] Jokes 
-- [x] Cute animal pictures 
-- [x] Recommending jokes based on likes and dislikes
-- [ ] Recommending dog (breeds) on likes and dislikes
-- [x] System tray icon with discord like mute system.
-- [x] Sending notifications for jokes based on preferences
+- ✅ Saving initial preferences
+- ✅ Jokes 
+- ✅ Cute animal pictures 
+- ✅ Recommending jokes based on likes and dislikes
+- ☐ Recommending dog (breeds) on likes and dislikes
+- ✅ System tray icon with discord like mute system.
+- ✅ Sending notifications for jokes based on preferences
 
 #### High level features
-- [x] Ability to add a joke
-- [ ] Ability to comment on a joke which everyone can see.
+- ✅ Ability to add a joke
+- ☐ Ability to comment on a joke which everyone can see.
 
 ## Running the project
 #### Prequisites 
