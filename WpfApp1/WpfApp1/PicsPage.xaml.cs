@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MahApps.Metro.IconPacks;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -39,6 +40,44 @@ namespace WpfApp1
         }
         public void UpdateImage(string url)
         {
+            var stackPanel = new StackPanel() { Orientation = Orientation.Horizontal };
+            var transformGroup = new TransformGroup();
+
+            var skewTransform = new SkewTransform(0, 0, 0, 0);
+            var rotateTransform = new RotateTransform(0);
+            var scale = new ScaleTransform(-1, 1);
+            var origin = new Point(0.4, 0.3);
+            transformGroup.Children.Add(rotateTransform);
+            transformGroup.Children.Add(skewTransform);
+            transformGroup.Children.Add(scale);
+            var packIconMaterial = new PackIconMaterial()
+            {
+                Kind = PackIconMaterialKind.ThumbDownOutline,
+                Width = 36,
+                Height = 36,
+                RenderTransformOrigin = origin,
+                RenderTransform = transformGroup,
+            };
+
+
+
+            stackPanel.Children.Add(packIconMaterial);
+            var textBlock = new TextBlock()
+            {
+                Text = "Dislike",
+                VerticalAlignment = VerticalAlignment.Top,
+                FontSize = 24,
+            };
+            stackPanel.Children.Add(textBlock);
+            this.DislikeButton.Content = stackPanel;
+            var packIcon = new PackIconMaterial()
+            {
+                Kind = PackIconMaterialKind.HeartOutline,
+                Height = 23,
+                Width = 23
+
+            };
+            HeartIcon.IconResource = packIcon;
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(url, UriKind.Absolute);
@@ -106,6 +145,50 @@ namespace WpfApp1
             public string status { get; set; }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var packIcon = new PackIconMaterial()
+            {
+                Kind = PackIconMaterialKind.Heart,
+                Height = 23,
+                Width = 23
 
+            };
+            HeartIcon.IconResource = packIcon;
+        }
+
+        private void DislikeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var stackPanel = new StackPanel() { Orientation = Orientation.Horizontal };
+            var transformGroup = new TransformGroup();
+
+            var skewTransform = new SkewTransform(0, 0, 0, 0);
+            var rotateTransform = new RotateTransform(0);
+            var scale = new ScaleTransform(-1, 1);
+            var origin = new Point(0.4, 0.3);
+            transformGroup.Children.Add(rotateTransform);
+            transformGroup.Children.Add(skewTransform);
+            transformGroup.Children.Add(scale);
+            var packIconMaterial = new PackIconMaterial()
+            {
+                Kind = PackIconMaterialKind.ThumbDown,
+                Width = 36,
+                Height = 36,
+                RenderTransformOrigin = origin,
+                RenderTransform = transformGroup,
+            };
+
+
+
+            stackPanel.Children.Add(packIconMaterial);
+            var textBlock = new TextBlock()
+            {
+                Text = "Dislike",
+                VerticalAlignment = VerticalAlignment.Top,
+                FontSize = 24,
+            };
+            stackPanel.Children.Add(textBlock);
+            this.DislikeButton.Content = stackPanel;
+        }
     }
 }

@@ -98,7 +98,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-           
+
             <TextBox x:Name="Question"
                      FontSize="26"
                      TextWrapping="Wrap"
@@ -112,8 +112,8 @@
                      materialDesign:HintAssist.IsFloating="True"
                      Grid.RowSpan="5"
                      Margin="62,0,0,21">
-            
             </TextBox>
+           
             <TextBlock Text="Joke"
                        Name="JokeText"
                        Grid.Row="1"
@@ -153,6 +153,7 @@
                                    Text="Two part" />
                     </StackPanel>
                 </Button>
+                
                 <Button Style="{StaticResource MySaveButton}"
                         xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
                         Padding="10"
@@ -169,6 +170,7 @@
                                    Text="Submit" />
                     </StackPanel>
                 </Button>
+                    
                 <Button Style="{StaticResource MyButton}"
                         xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
                         Padding="10"

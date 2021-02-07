@@ -106,8 +106,9 @@
                         Grid.Column="0"
                         xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
                         Padding="10"
-                       
-                        BorderBrush="Transparent">
+                        Name="DislikeButton"
+                        BorderBrush="Transparent"
+                        Click="DislikeButton_Click">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
                         <iconPacks:PackIconControl Kind="{x:Static iconPacks:PackIconBoxIconsKind.RegularDislike}"
@@ -153,10 +154,12 @@
                         xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
                         Padding="10"
                         BorderBrush="Transparent"
-                      >
+                        Click="Button_Click">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-                        <mi:MaterialIcon Icon="ic_favorite_border"
+                        <mi:MaterialIcon
+                           Name="HeartIcon"
+                            Icon="ic_favorite_border"
                                          Height="36"
                                          Width="45" />
 

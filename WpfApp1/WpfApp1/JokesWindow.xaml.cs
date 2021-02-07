@@ -259,6 +259,9 @@ namespace WpfApp1
         void cms_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             _notifyIcon.ContextMenuStrip.Items.Clear();
+            Forms.ToolStripItem open = new Forms.ToolStripButton("Open");
+            open.Click += Open;
+            _notifyIcon.ContextMenuStrip.Items.Add(open);
             Forms.ToolStripItem close = new Forms.ToolStripButton("Close");
             close.Click += ShutDown;
             _notifyIcon.ContextMenuStrip.Items.Add(close);
@@ -306,7 +309,11 @@ namespace WpfApp1
 
             _notifyIcon.ContextMenuStrip.ItemClicked += new Forms.ToolStripItemClickedEventHandler(contexMenu_ItemClicked);
         }
-
+        private void Open(object sender, EventArgs e)
+        {
+            JokesWindow jw = new JokesWindow();
+            jw.Show();
+        }
         private void UnMute_Click(object sender, EventArgs e)
         {
             string _path = Directory.GetCurrentDirectory() + "\\usersettings.json";

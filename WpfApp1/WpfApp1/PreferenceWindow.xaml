@@ -396,12 +396,7 @@
                         Content="Cancel"
                         Grid.Column="1"
                         Style="{StaticResource MyButton}">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius"
-                                    Value="8" />
-                        </Style>
-                    </Button.Resources>
+                    
                 </Button>
                 <Button FontSize="21"
                         Padding="15 0 15 0"
@@ -413,12 +408,7 @@
                         Grid.Column="2"
                         Click="SaveButton_Click"
                         Style="{StaticResource SaveButton}">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius"
-                                    Value="8" />
-                        </Style>
-                    </Button.Resources>
+                    
                 </Button>
             </Grid>
         </Grid>

@@ -72,7 +72,7 @@
                                  Width="45" />
 
 
-                <TextBlock FontSize="37"
+                <TextBlock FontSize="26"
                            VerticalAlignment="Top"
                            Text="Preference" />
 

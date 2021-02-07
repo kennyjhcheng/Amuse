@@ -52,9 +52,13 @@ namespace WpfApp1
             var data = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
             var result = await client.PostAsync(path, data);
             string resultContent = await result.Content.ReadAsStringAsync();
-            Console.WriteLine(resultContent);
+            System.Windows.Forms.NotifyIcon _notifyIcon = new System.Windows.Forms.NotifyIcon();
+            _notifyIcon.BalloonTipText = "Thank you for sharing laughs with others";
+            _notifyIcon.BalloonTipTitle = "Joke submitted !";
+            _notifyIcon.Visible =true;
+            _notifyIcon.ShowBalloonTip(6);
             spinner.Visibility = Visibility.Hidden;
-            this.Close();
+            //this.Close();
         }
     
         
@@ -83,6 +87,16 @@ namespace WpfApp1
             var result = await client.PostAsync(path, data);
             string resultContent = await result.Content.ReadAsStringAsync();
             Console.WriteLine(resultContent);
+            spinner.Visibility = Visibility.Hidden;
+            System.Windows.Forms.NotifyIcon _notifyIcon = new System.Windows.Forms.NotifyIcon
+            {
+                BalloonTipText = "Thank you for sharing laughs with others",
+                BalloonTipTitle = "Joke submitted !",
+                Visible = true,
+               
+        };
+            _notifyIcon.Icon = new System.Drawing.Icon(Directory.GetCurrentDirectory() + "\\icon.ico");
+            _notifyIcon.ShowBalloonTip(6);
             spinner.Visibility = Visibility.Hidden;
             this.Close();
         }

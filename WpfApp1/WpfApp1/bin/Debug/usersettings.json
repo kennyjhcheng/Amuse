@@ -1,6 +1,6 @@
 {
   "time": 1,
-  "interval": 2,
+  "interval": 1,
   "jokeSelection": "select",
   "jokeSelection1": "any",
   "notifyJokes": false,
@@ -21,11 +21,11 @@
   "mute": null,
   "name": null,
   "jokeCategory": {
-    "programming": 3,
-    "miscellaneous": 0,
-    "current": 0,
-    "pun": 0,
-    "science": 1,
+    "programming": 4,
+    "miscellaneous": -1,
+    "current": -1,
+    "pun": -1,
+    "science": -1,
     "history": -1,
     "christmas": -1
   },

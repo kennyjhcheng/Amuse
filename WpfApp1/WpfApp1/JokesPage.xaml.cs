@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MahApps.Metro.IconPacks;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -70,7 +71,7 @@ namespace WpfApp1
                     a.Visibility = Visibility.Visible;
                     q.Text = jsonJoke.q;
                     a.Text = jsonJoke.a;
-                    Console.WriteLine("TWO");
+                   
                 }
                 else
                 {
@@ -78,6 +79,44 @@ namespace WpfApp1
                     j.Text = jsonJoke.j;
                 }
             }
+            var stackPanel = new StackPanel() { Orientation = Orientation.Horizontal };
+            var transformGroup = new TransformGroup();
+
+            var skewTransform = new SkewTransform(0, 0, 0, 0);
+            var rotateTransform = new RotateTransform(0);
+            var scale = new ScaleTransform(-1, 1);
+            var origin = new Point(0.4, 0.3);
+            transformGroup.Children.Add(rotateTransform);
+            transformGroup.Children.Add(skewTransform);
+            transformGroup.Children.Add(scale);
+            var packIconMaterial = new PackIconMaterial()
+            {
+                Kind = PackIconMaterialKind.ThumbDownOutline,
+                Width = 36,
+                Height = 36,
+                RenderTransformOrigin = origin,
+                RenderTransform = transformGroup,
+            };
+
+
+
+            stackPanel.Children.Add(packIconMaterial);
+            var textBlock = new TextBlock()
+            {
+                Text = "Dislike",
+                VerticalAlignment = VerticalAlignment.Top,
+                FontSize = 24,
+            };
+            stackPanel.Children.Add(textBlock);
+            this.DislikeButton.Content = stackPanel;
+            var packIcon= new PackIconMaterial()
+            {
+                Kind = PackIconMaterialKind.HeartOutline,
+                Height = 23,
+                Width = 23
+
+            };
+            HeartIcon.IconResource = packIcon;
             spinner.Visibility = Visibility.Hidden;
         }
         private async void FirstTextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -170,6 +209,15 @@ namespace WpfApp1
 
             string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
             File.WriteAllText(_path, output);
+            var packIconMaterial = new PackIconMaterial()
+            {
+                Kind = PackIconMaterialKind.Heart,
+                Height = 23,
+                Width = 23
+
+            };
+            HeartIcon.IconResource = packIconMaterial;
+            
             //HeartIcon.Background = new SolidColorBrush(Colors.Red);
             //DislikeIcon.Background = new SolidColorBrush(Colors.Transparent);
         }
@@ -230,6 +278,37 @@ namespace WpfApp1
 
             string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
             File.WriteAllText(_path, output);
+            var stackPanel = new StackPanel() { Orientation = Orientation.Horizontal };
+            var transformGroup = new TransformGroup();
+           
+            var skewTransform = new SkewTransform(0, 0, 0, 0);
+            var rotateTransform = new RotateTransform(0);
+            var scale = new ScaleTransform(-1, 1);
+            var origin = new Point(0.4,0.3);
+            transformGroup.Children.Add(rotateTransform);
+            transformGroup.Children.Add(skewTransform);
+            transformGroup.Children.Add(scale);
+            var packIconMaterial = new PackIconMaterial()
+            {
+                Kind = PackIconMaterialKind.ThumbDown,
+                Width = 36,
+                Height = 36,
+                RenderTransformOrigin = origin,
+                RenderTransform = transformGroup,
+            };
+        
+            
+           
+            stackPanel.Children.Add(packIconMaterial);
+            var textBlock = new TextBlock()
+            {
+                Text = "Dislike",
+                VerticalAlignment = VerticalAlignment.Top,
+                FontSize=24,
+            };
+            stackPanel.Children.Add(textBlock);
+            this.DislikeButton.Content = stackPanel;
+           
             //HeartIcon.Background = new SolidColorBrush(Colors.Transparent);
             //DislikeIcon.Background = new SolidColorBrush(Colors.Blue);
         }
@@ -270,18 +349,8 @@ namespace WpfApp1
 
         private void AddPresetButton_Click(object sender, RoutedEventArgs e)
         {
-            var addButton = sender as FrameworkElement;
-            if (!addButton.ContextMenu.IsOpen)
-            {
-               
-               
-                if (addButton != null)
-                {
-                    addButton.ContextMenu.IsOpen = true;
-                }
-            
-            }
-            
+           
+            AddPresetButton.ContextMenu.IsOpen = true;
            
         }
 

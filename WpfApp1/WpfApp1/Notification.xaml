@@ -144,8 +144,6 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-    
-
         <Border Margin="70,40,70,0"
                 Grid.RowSpan="5">
             <Image Grid.RowSpan="5"
@@ -189,15 +187,13 @@
                 Close
             </Button>
         </Grid>
-
-
         <!-- Animation -->
         <Grid.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard>
                     <Storyboard Completed="Storyboard_Completed">
                         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
-                            <SplineDoubleKeyFrame KeyTime="0:0:0"
+                            <SplineDoubleKeyFrame KeyTime="0:0:0.3"
                                                   Value="0" />
                             <SplineDoubleKeyFrame KeyTime="0:0:0.5"
                                                   Value="1" />

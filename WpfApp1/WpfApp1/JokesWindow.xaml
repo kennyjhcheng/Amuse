@@ -49,10 +49,8 @@
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
-
             </Setter>
         </Style>
-
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>

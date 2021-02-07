@@ -18,7 +18,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 using Windows.UI.Notifications;
 using Forms = System.Windows.Forms;
 namespace WpfApp1
@@ -66,7 +65,7 @@ namespace WpfApp1
 
         private void SaveInitialPreference(object sender, RoutedEventArgs e)
         {
-           
+
             try
             {
                 string _path = Directory.GetCurrentDirectory() + "\\usersettings.json";
@@ -78,8 +77,13 @@ namespace WpfApp1
                 string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
                 File.WriteAllText(_path, output);
                 JokesWindow window1 = new JokesWindow();
+               
+              
                 this.Close();
+
+            
                 window1.Show();
+
 
             }
             catch
@@ -142,13 +146,10 @@ namespace WpfApp1
             {
                 dynamic jsonJoke = await response.Content.ReadAsStringAsync();
                 j = JsonConvert.DeserializeObject<Joke>(jsonJoke);
-
-
             }
 
             await Task.Delay(new TimeSpan(0, 30, 30)).ContinueWith(o =>
             {
-
                 TextNotification n = new TextNotification();
                 n.Show();
             });
@@ -201,8 +202,6 @@ namespace WpfApp1
             {
                 dynamic jsonJoke = await response.Content.ReadAsStringAsync();
                 j = JsonConvert.DeserializeObject<Joke>(jsonJoke);
-
-
             }
 
             await Task.Delay(new TimeSpan(0, 30, 30)).ContinueWith(o =>
@@ -308,17 +307,21 @@ namespace WpfApp1
         void cms_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             _notifyIcon.ContextMenuStrip.Items.Clear();
+            Forms.ToolStripItem open = new Forms.ToolStripButton("Open");
+            open.Click += Open;
+            _notifyIcon.ContextMenuStrip.Items.Add(open);
             Forms.ToolStripItem close = new Forms.ToolStripButton("Close");
             close.Click += ShutDown;
             _notifyIcon.ContextMenuStrip.Items.Add(close);
-           
-           
+            
+
             string _path = Directory.GetCurrentDirectory() + "\\usersettings.json";
             string jsonFromFile = File.ReadAllText(_path);
             dynamic jsonObj = JsonConvert.DeserializeObject(jsonFromFile);
             if (jsonObj["mute"] == null)
             {
-               
+
+                
                 Forms.ToolStripItem fifteen = new Forms.ToolStripButton("For 15 Minutes");
                 fifteen.Click += Fifteen_Click;
                 Forms.ToolStripItem hour = new Forms.ToolStripButton("For 1 Hour");
@@ -459,6 +462,11 @@ namespace WpfApp1
         private void ShutDown(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void Open(object sender, EventArgs e)
+        {
+            JokesWindow jw = new JokesWindow();
+            jw.Show();
         }
         private void OpenSettingButton_Click(object sender, RoutedEventArgs e)
         {
