@@ -28,12 +28,16 @@
 - If you haven't already installed Visual Studio, go to the Visual Studio downloads page to install it for free.
   - https://visualstudio.microsoft.com/downloads/
 - You can use either .NET Framework or .NET Core for this tutorial. .NET Core is the newer, more modern framework. .NET Core requires Visual Studio 2019 version 16.3 or later.
+  - Download the [.NET Framework Developer](https://dotnet.microsoft.com/download/dotnet-framework/net472) Pack and install it
 
 #### Cloning and opening the repo
-- Download zip for this repo.
-- Open Visual Studio 2019.
-- On the start window, select Open a project or solution.
-- Visual Studio opens an instance of File Explorer, where you can browse to your solution or project, and then select it to open it.
+1. Download zip for this repo and unzip it or clone the project from github with your terminal/command line
+2. Open Visual Studio
+3. On the start window, select Open a project or solution.
+  * or go to File -> Open -> Project/Solution
+4. Visual Studio opens an instance of File Explorer, where you can browse to the directory where you unzipped the project, open that directory
+5. In the directory, double click into 'WpfApp1' directory, then double click on 'WpfApp1.sln'
+6. Press on the green triangle start button in Visual Studio's tool bar to run the application
 
 ## Contact info
 ```
