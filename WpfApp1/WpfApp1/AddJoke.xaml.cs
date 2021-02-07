@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,8 +13,10 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfAnimatedGif;
 
 namespace WpfApp1
 {
@@ -25,12 +29,22 @@ namespace WpfApp1
         {
             InitializeComponent();
            
-        }
 
+        }
+        public void UpdateImage(string url)
+        {
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(url);
+            image.EndInit();
+            ImageBehavior.SetAnimatedSource(spinner, image);
+        }
 
         private async void DoneJoke_Click(object sender, RoutedEventArgs e)
         {
+
             
+          
             spinner.Visibility = Visibility.Visible;
             string path = "https://jokesapi.gottacatchemall.repl.co/jokesadd"; 
             HttpClient client = new HttpClient();
@@ -49,6 +63,14 @@ namespace WpfApp1
         
         private async void Done2Button_Click(object sender, RoutedEventArgs e)
         {
+            DoubleAnimation da = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = new Duration(TimeSpan.FromSeconds(2)),
+                AutoReverse = true
+            };
+            spinner.BeginAnimation(OpacityProperty, da);
             Submit.Visibility = Visibility.Hidden;
             spinner.Visibility = Visibility.Visible;
             string path = "https://jokesapi.gottacatchemall.repl.co/jokesadd";
@@ -143,6 +165,27 @@ namespace WpfApp1
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //StringBuilder bodyContent = new StringBuilder();
+            //string fileName = "amuseloading.gif";
+            //try
+            //{
+            //    string filePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), fileName);
+            //    using (StreamReader sr = new StreamReader(filePath))
+            //    {
+            //        // Read the stream.
+            //        bodyContent.Append(sr.ReadToEnd());
+            //    }
+            //   UpdateImage(fileName);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(String.Format("{0} @ {1}", "Exception while reading the file: " + ex.InnerException.Message, DateTime.Now));
+            //    throw ex;
+            //}
         }
     }
 }

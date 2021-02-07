@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         fw:AcrylicWindow.Enabled="True"
         fw:AcrylicWindow.TintColor="#CCFFFFFF"
-        fw:AcrylicWindow.AcrylicWindowStyle="None"
+        fw:AcrylicWindow.AcrylicWindowStyle="Normal"
         fw:AcrylicWindow.TintOpacity="0.9"
         Title="AddJoke"
         Height="450"
+        Loaded="Window_Loaded"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         Width="800">
     <Window.Resources>
         <Style x:Key="MySaveButton"
@@ -30,7 +33,6 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-
                         <Border Name="border"
                                 BorderThickness="0"
                                 BorderBrush="Black"
@@ -47,7 +49,6 @@
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
-
             </Setter>
         </Style>
         <Style x:Key="MyButton"
@@ -77,11 +78,12 @@
                                      Value="True">
                                 <Setter Property="Foreground"
                                         Value="#2d9cdb" />
+                                <Setter Property="Opacity"
+                                        Value="0.8" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
-
             </Setter>
         </Style>
     </Window.Resources>
@@ -96,6 +98,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+           
             <TextBox x:Name="Question"
                      FontSize="26"
                      TextWrapping="Wrap"
@@ -105,10 +108,11 @@
                      Background="Transparent"
                      HorizontalAlignment="Left"
                      Grid.Row="1"
+                     materialDesign:HintAssist.Hint="Add your joke"
+                     materialDesign:HintAssist.IsFloating="True"
                      Grid.RowSpan="5"
-                     Margin="62,0,0,21"
->
-
+                     Margin="62,0,0,21">
+            
             </TextBox>
             <TextBlock Text="Joke"
                        Name="JokeText"
@@ -123,7 +127,6 @@
                      HorizontalAlignment="Left"
                      Grid.Row="2"
                      Grid.RowSpan="3">
-
             </TextBox>
             <Grid Grid.Row="6">
                 <Grid.ColumnDefinitions>
@@ -139,24 +142,17 @@
                         Grid.Column="3"
                         Visibility="Hidden"
                         Name="TwoPart"
-                        BorderBrush="Transparent"
-                     >
+                        BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
                         <mi:MaterialIcon Icon="ic_done_all"
                                          Height="36"
                                          Width="45" />
-
-
                         <TextBlock FontSize="24"
                                    VerticalAlignment="Top"
                                    Text="Two part" />
-
                     </StackPanel>
-
-
                 </Button>
-
                 <Button Style="{StaticResource MySaveButton}"
                         xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
                         Padding="10"
@@ -168,16 +164,10 @@
                         Margin="0,0,10,0">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-
-
-
                         <TextBlock FontSize="24"
                                    VerticalAlignment="Top"
                                    Text="Submit" />
-
                     </StackPanel>
-
-
                 </Button>
                 <Button Style="{StaticResource MyButton}"
                         xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
@@ -190,25 +180,31 @@
                         Margin="10,0">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-
-
                         <TextBlock FontSize="24"
                                    VerticalAlignment="Top"
                                    Text="Cancel" />
-
                     </StackPanel>
-
-
                 </Button>
-                <fa:ImageAwesome Visibility="Hidden"
+                <!--<fa:ImageAwesome Visibility="Hidden"
                                  Grid.Column="3"
                                  x:Name="spinner"
                                  Grid.Row="6"
-                                 Icon="Refresh"
+                                 Icon="CircleOutlineNotch"
+                                 Foreground="#007ACC"
                                  Spin="True"
                                  Height="48"
-                                 Width="48" />
-                <Button Style="{StaticResource MyButton}"
+                                 Width="48" />-->
+               
+                    <Image Visibility="Hidden"
+                       Height="70"
+                           Opacity="0.8"
+                       Width="70"
+                       Grid.Column="3"
+                        x:Name="spinner"
+                       gif:ImageBehavior.AnimatedSource="pack://application:,,,/userSettings/amuseloading.gif"
+                     />
+
+                    <Button Style="{StaticResource MyButton}"
                         xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
                         Padding="10"
                         Grid.Column="6"
@@ -221,15 +217,10 @@
                         <mi:MaterialIcon Icon="ic_done_all"
                                          Height="36"
                                          Width="45" />
-
-
                         <TextBlock FontSize="24"
                                    VerticalAlignment="Top"
                                    Text="Done" />
-
                     </StackPanel>
-
-
                 </Button>
             </Grid>
 
