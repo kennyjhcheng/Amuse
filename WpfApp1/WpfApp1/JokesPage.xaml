@@ -17,6 +17,8 @@
       d:DesignWidth="800"
       Loaded="JokePage_Loaded"
       Background="Transparent"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
       Title="JokesPage">
     <Page.Resources>
@@ -137,6 +139,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+       
+
     </Page.Resources>
     <Border Margin="50 0 50 60">
         <Grid>
@@ -180,14 +184,22 @@
                        HorizontalAlignment="Left"
                        Text="Because they attract bugs"
                        FontSize="36" />
-            <fa:ImageAwesome Visibility="Hidden"
+            <!--<fa:ImageAwesome Visibility="Hidden"
+                             Foreground="#007ACC"
                              x:Name="spinner"
-                             Grid.Row="4"
-                             Icon="Refresh"
+                             Grid.Row="3"
+                             Icon="CircleOutlineNotch"
                              Spin="True"
                              Height="48"
-                             Width="48" />
-            
+                             Width="48" />-->     
+            <Image Visibility="Hidden"
+                   Height="400"
+                   Width="400"      
+                
+                   Grid.Row="2"
+                   Grid.RowSpan="4"
+                   x:Name="spinner"
+                   gif:ImageBehavior.AnimatedSource="pack://application:,,,/userSettings/amuseloading.gif" />
             <Grid Grid.Row="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -217,13 +229,10 @@
                           Template="{StaticResource MenuItemTemplate}"
                           Grid.Column="4">
                     <MenuItem.ContextMenu
-                        
                         >
                         <ContextMenu MouseLeave="ContextMenu_MouseLeave">
                             <MenuItem 
                               Name="MenuItemOne"
-                             
-                                
                                 Height="70"
                                       Width="187"
                                       Click="MenuItemOne_Click"

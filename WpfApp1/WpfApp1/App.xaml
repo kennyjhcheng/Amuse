@@ -5,6 +5,10 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <!--<BitmapImage x:Key="settingsicon"
+                         UriSource="\userSettings\settings.svg">
+
+            </BitmapImage>-->
             <ResourceDictionary.MergedDictionaries>
                 <!--  FluentWPF Controls  -->
                 <ResourceDictionary Source="pack://application:,,,/FluentWPF;component/Styles/Controls.xaml" />

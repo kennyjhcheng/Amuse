@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g+3ORCzp+j+C5HbJ4ZtCxSRxpgCjYRouT1HYo729RFOB7sAKPb/NXwPZtQTluiqGpqHSZ8oXNnfusxzLVhHYBg==",
+  "dgSpecHash": "mcusKF73wrnJmzq86ZO2e7/sCocKZb/jZJKwLaTuKElS44rkpc9xByzVRHechQyzT5t4svM7/UyUn71/+z6TgA==",
   "success": true,
   "projectFilePath": "D:\\c#Projects\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\aashi\\.nuget\\packages\\materialicons\\1.0.3\\materialicons.1.0.3.nupkg.sha512",
     "C:\\Users\\aashi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\aashi\\.nuget\\packages\\notifications.wpf\\0.1.1\\notifications.wpf.0.1.1.nupkg.sha512",
+    "C:\\Users\\aashi\\.nuget\\packages\\wpfanimatedgif\\2.0.0\\wpfanimatedgif.2.0.0.nupkg.sha512",
     "C:\\Users\\aashi\\.nuget\\packages\\wpfnotification\\1.1.0\\wpfnotification.1.1.0.nupkg.sha512"
   ],
   "logs": []

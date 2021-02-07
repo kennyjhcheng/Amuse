@@ -123,3 +123,7 @@ D:\c#Projects\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.IconPacks.Zondicons.dll
 D:\c#Projects\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.IconPacks.Zondicons.pdb
 D:\c#Projects\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.IconPacks.dll
 D:\c#Projects\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.IconPacks.pdb
+D:\c#Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
+D:\c#Projects\WpfApp1\WpfApp1\bin\Debug\userSettings\usersettings.json
+D:\c#Projects\WpfApp1\WpfApp1\bin\Debug\WpfAnimatedGif.dll
+D:\c#Projects\WpfApp1\WpfApp1\bin\Debug\WpfAnimatedGif.pdb

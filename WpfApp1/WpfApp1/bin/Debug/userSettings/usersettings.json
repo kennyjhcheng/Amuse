@@ -1,13 +1,11 @@
 {
-  "time": 1,
-  "interval": 2,
+  "time": 3600000,
+  "jokeInterval": 1,
   "jokeSelection": "select",
   "jokeSelection1": "any",
   "notifyJokes": false,
   "notifyPics": false,
   "pic": 30,
-  "From": "1:0 AM",
-  "To": "1:0 AM",
   "dnd": [
     {
       "dndstart": 1,
@@ -18,15 +16,13 @@
       "dndstop": 6
     }
   ],
-  "mute": null,
   "name": null,
   "jokeCategory": {
-    "programming": 3,
-    "miscellaneous": 0,
-    "current": 0,
-    "pun": 0,
-    "science": 1,
-    "history": -1,
+    "programming": -2,
+    "miscellaneous": 2,
+    "dark": -2,
+    "pun": -1,
+    "spooky": -1,
     "christmas": -1
   },
   "blacklist": [

@@ -12,6 +12,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -47,6 +48,14 @@ namespace WpfApp1
         public async Task UpdateUI()
         {
             HideElementsForLoading();
+            DoubleAnimation da = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = new Duration(TimeSpan.FromSeconds(2)),
+                AutoReverse = true
+            };
+            spinner.BeginAnimation(OpacityProperty, da);
             spinner.Visibility = Visibility.Visible;
             Joke jsonJoke = await GetJoke();
             if (jsonJoke == null)
@@ -57,17 +66,14 @@ namespace WpfApp1
             {
                 if (jsonJoke.type == "twopart")
                 {
-
                     q.Visibility = Visibility.Visible;
                     a.Visibility = Visibility.Visible;
-
                     q.Text = jsonJoke.q;
                     a.Text = jsonJoke.a;
                     Console.WriteLine("TWO");
                 }
                 else
                 {
-
                     j.Visibility = Visibility.Visible;
                     j.Text = jsonJoke.j;
                 }
@@ -80,8 +86,6 @@ namespace WpfApp1
         }
         private void GetUserData()
         {
-
-
             try
             {
                 string _path = Directory.GetCurrentDirectory() + "\\usersettings.json";

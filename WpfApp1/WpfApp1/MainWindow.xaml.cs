@@ -66,6 +66,7 @@ namespace WpfApp1
 
         private void SaveInitialPreference(object sender, RoutedEventArgs e)
         {
+           
             try
             {
                 string _path = Directory.GetCurrentDirectory() + "\\usersettings.json";
@@ -77,9 +78,9 @@ namespace WpfApp1
                 string output = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
                 File.WriteAllText(_path, output);
                 JokesWindow window1 = new JokesWindow();
-                this.Hide();
-                
+                this.Close();
                 window1.Show();
+
             }
             catch
             {
@@ -92,8 +93,8 @@ namespace WpfApp1
             Button jokeButton = sender as Button;
             if (jokePreference)
             {
-                jokeButton.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#2d9cdb"));
-                jokeButton.Background.Opacity = 0.4;
+                jokeButton.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#66007ACC"));
+                //jokeButton.Background.Opacity = 0.4;
             }
             else
             {
@@ -107,8 +108,8 @@ namespace WpfApp1
             Button picsButton = sender as Button;
             if (picsPreference)
             {
-                picsButton.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#2d9cdb"));
-                picsButton.Background.Opacity = 0.4;
+                picsButton.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#66007ACC"));
+                //picsButton.Background.Opacity = 0.4;
             }
             else
             {
