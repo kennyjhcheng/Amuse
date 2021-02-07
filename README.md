@@ -6,6 +6,7 @@
 
 # Table of Content:
 - [Features to implement](#features-to-implement)
+- [Displai Shots](#display-shots)
 - [Running the project](#running-the-project)
 - [Contact info](#contact-info)
 - [Member List and github repo](#member-list-and-github-repos)
@@ -22,6 +23,10 @@
 #### High level features
 - ✅ Ability to add a joke
 - 🚧 Ability to comment on a joke which everyone can see.
+
+## Display shots
+<div align="center"><img src ="p1.jpg" width="450" height="310"></div><br/>
+ <div align="center"> <img src ="p2.jpg" width="450" height="350"> </div> <br/>  <div align="center">  <img src ="p3.jpg" width="450" height="350">   </div><br/>  <div align="center">  <img src ="p4.jpg" width="450" height="500"></div><br/>
 
 ## Running the project
 #### Prequisites 
